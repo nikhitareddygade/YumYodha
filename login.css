@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('loginbg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .input-container {
+        position: relative;
+        color: #0e3342;
+    }
+    .input-container .bx {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #1b4d60;
+    }
+    .input-container input {
+        width: 100%;
+        padding: 10px 10px 10px 40px; /* Add left padding for the icon */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .white-section {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        background-color: #fed69a;
+        margin-top: 120px;
+        border: 1px solid black;
+        padding: 20px;
+        text-align: center;
+        height: 450px;
+        width: 320px;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    
+    .login,.register{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+.mail,.password{
+    width: 280px;
+    height: 40px;
+    border: 2px solid rgba(33, 21, 21);   
+    background-color: #e1be7c;
+    color: #1b4d60;
+}  
+
+.login-button {
+    color: #fff;
+    background-color: #D54215;
+    border: #D54215;
+    border-radius: 5px;
+    height: 40px;
+    width: 280px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.login-button:hover {
+    background-color: rgba(213, 66, 21,0.95);
+    color: #fff;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #888787;
+}
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(49, 49, 49,0.85);
+    margin: 0 15px;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.social-media a:hover{
+    color: rgba(213, 66, 21,0.95);
+}
+
+.register-link a{
+    color: rgba(213, 66, 21,0.95);
+}

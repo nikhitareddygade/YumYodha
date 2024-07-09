@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUMYODHA Rating</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+        }
+        :root{
+        --Brown:#9B2309;
+        --peach:#e19077;
+        --grey:#ea776a;
+        --darkbrown:#620f06;
+        --shadow:8px 8px 30px rgba(0,0,0,.05);
+        }
+        body{
+        background: var(--peach);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        }
+        .wrapper{
+        background: var(--grey);
+        padding: 2rem;
+        max-width: 556px;
+        width: 100%;
+        border-radius: .75rem;
+        box-shadow: var(--shadow);
+        text-align: center;
+        }
+        .wrapper h3{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        }
+        .rating{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap:.5rem;
+        font-size: 2rem;
+        color: var(--Brown);
+        margin-bottom: 2rem;
+        }
+        .rating .star{
+        cursor: pointer;
+        }
+        .rating .star.active{
+        opacity: 0;
+        animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
+        color:var(--darkbrown);
+        }
+        @keyframes animate{
+        0%{
+        opacity: 0;
+        transform: scale(1);
+        }
+        50%{
+        opacity: 1;
+        transform: scale(1.2);
+        }
+        100%{
+        opacity: 1;
+        transform: scale(1);
+        }
+        }
+        .rating .star:hover{
+        transform: scale(1.1);
+        }
+        textarea {
+        width: 95%;
+        background: rgb(155, 35, 9,0.85);
+        color: #ed7366;
+        padding: 1rem;
+        border-radius: .5rem;
+        border:none;
+        outline: none;
+        resize: none;
+        margin-bottom: 2rem;
+        }
+        .btn-group{
+        display: flex;
+        grid-gap: .5rem;
+        align-items: center;
+        }
+        .btn-group .btn{
+        padding: .65rem 1rem;
+        border-radius: .5rem;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        font-size: .875rem;
+        font-weight: 500;
+        }
+        .btn-group .btn.submit{
+        background: #602f17;
+        color:rgb(228, 115, 115);
+        }
+        .btn-group .btn.submit:hover{
+        background: rgb(93, 40, 14,0.9);
+        }
+        .btn-group .btn.cancel{
+        background: rgb(143, 58, 58);
+        color:#e19077;
+        }
+        .btn-group .btn.cancel:hover{
+        background: rgb(143, 58, 58,0.9);
+        }
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            border: 1px solid #620f06;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #620f06;
+            height: 40px;
+            font-size: 1em;
+            text-align:center;
+            padding: 0.1px 0;
+        }
+
+        .header p {
+            color:rgb(209, 103, 103);
+        }
+
+        .content {
+        padding: 20px;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+        }
+
+        .icon {
+            font-size: 4rem; 
+            color: #5d280e;
+            margin-top: 10px;
+        }
+
+        h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+         margin-top: 15px;
+        }
+
+        p {
+        font-size: 1.1em;
+        color: brown;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        }
+
+        .stars {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        }
+
+        .star {
+        font-size: 2em;
+        color: #620f06;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>YUMYODHA</p>
+        </div>
+        <div class="content">
+            <div class="icon-container">
+                <i class='bx bxs-bowl-hot icon'></i>
+            </div>
+            <h1>Hope you had a good experience</h1>
+            <p>Help us improve by rating us</p>
+
+            <div class="wrapper">
+                <form action="#">
+                    <div class="rating">
+                        <input type="number" name="rating" hidden>
+                        <i class='bx bx-star star' style="--i: 0;"></i>
+                        <i class='bx bx-star star' style="--i: 1;"></i>
+                        <i class='bx bx-star star' style="--i: 2;"></i>
+                        <i class='bx bx-star star' style="--i: 3;"></i>
+                        <i class='bx bx-star star' style="--i: 4;"></i>
+                    </div>
+                    <textarea name="opinion" cols="30" rows="5" placeholder="Any feedback..."></textarea>
+                    <div class="btn-group">
+                        <button type="submit" class="btn submit">Submit</button>
+                        <button class="btn cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            const allStar = document.querySelectorAll('.rating .star')
+                const ratingValue = document.querySelector('.rating input')
+
+                allStar.forEach((item, idx) => {
+                    item.addEventListener('click', function () {
+                        let click = 0
+                        ratingValue.value = idx + 1
+                        console.log(ratingValue.value)
+
+                        allStar.forEach(i => {
+                            i.classList.replace('bxs-star', 'bx-star')
+                            i.classList.remove('active')
+                        })
+                        for (let i = 0; i < allStar.length; i++) {
+                            if (i <= idx) {
+                                allStar[i].classList.replace('bx-star', 'bxs-star')
+                                allStar[i].classList.add('active')
+                            } else {
+                                allStar[i].style.setProperty('--i', click)
+                                click++;
+                            }
+                        }
+                    })
+                });
+            function alertBox() {
+                alert("Your response was submitted. ThankYou...😀");
+            }
+            let button = document.querySelector(".btn.submit");
+            button.addEventListener("click",alertBox);
+        </script>
+</body>
+
+</html>
+

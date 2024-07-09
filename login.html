@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="white-section">
+        <div class="login">
+            <div class="input-container">
+                <i class='bx bxs-envelope'></i>
+                <input type="email" name="email" placeholder="Enter Email Address" class="mail">
+            </div>
+            <br>
+            <div class="input-container">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" name="password" placeholder="Password" class="password">
+            </div>
+            <p class="login-link">
+                <button onclick="validateForm()" class="login-button">Login</button>
+            </p>
+            <div class="divider">Login with</div>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class='bx bxl-google'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <p class="register-link">Don't have an account? <a href="register.html">Sign up</a></p>
+        </div>
+    </div>
+    <script>
+        function login() {
+            window.location.href = "main.html";
+        }
+
+        function loginUser(email, password) {
+            if (email && password) {
+                const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+                const user = existingUsers.find(u => u.email === email);
+
+                if (user && user.password === password) {
+                    login();
+                } else {
+                    alert('Invalid email or password. Please try again.');
+                }
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        function validateForm() {
+            var email = document.getElementsByName('email')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+
+            if (email == null || email == "") {
+                alert("Email can't be blank.");
+                return false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters.");
+                return false;
+            } else {
+                loginUser(email, password);
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

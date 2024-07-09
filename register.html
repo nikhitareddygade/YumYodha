@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="white-section">
+        <div class="login">
+            <div class="input-container">
+                <i class='bx bxs-envelope'></i>
+                <input type="email" name="email" placeholder="Enter Email Address" class="mail">
+            </div>
+            <br>
+            <div class="input-container">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" name="password" class="password" placeholder="Password">
+            </div>
+            <p class="register-link">
+                <button onclick="validateForm()" class="login-button">Sign up</button>
+            </p>
+        </div>
+    </div>
+    <script>
+        function login() {
+            window.location.href = "login.html";
+        }
+
+        function registerUser(email, password) {
+            if (email && password) {
+                const user = { email, password };
+                const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+                existingUsers.push(user);
+                localStorage.setItem('users', JSON.stringify(existingUsers));
+                login();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        function validateForm() {
+            var email = document.getElementsByName('email')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+
+            if (email == null || email == "") {
+                alert("Email can't be blank.");
+                return false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters.");
+                return false;
+            } else {
+                registerUser(email, password);
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            padding: 0;
+        }
+
+        .faq-item {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .faq-question-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            font-size: 1em;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What is special for breakfast in Hyderabad?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">Hyderabad offers a variety of special breakfast items like Dosa, Idli, and Pesarattu.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">Which country has the best pancakes in the world?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                <ul>
+                    <li>France - Crêpes</li>
+                    <li>America and Canada - Buttermilk pancakes</li>
+                    <li>Thailand - Roti</li>
+                    <li>India - Dosas</li>
+                    <li>Sri Lanka - Hoppers</li>
+                    <li>Malaysia - Apam balik</li>
+                    <li>Russia - Blinis</li>
+                    <li>The Netherlands - Pannekoeken</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What are some popular Italian dishes?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Popular Italian dishes include:
+                <ul>
+                    <li>Pizza</li>
+                    <li>Pasta (e.g., Spaghetti, Lasagna, Ravioli)</li>
+                    <li>Risotto</li>
+                    <li>Gelato</li>
+                    <li>Tiramisu</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What is sushi?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">Sushi is a Japanese dish that typically consists of vinegared rice combined with various
+                ingredients such as seafood, vegetables, and occasionally tropical fruits.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What is the national dish of Spain?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">The national dish of Spain is Paella, a rice dish originally from Valencia. It can
+                include various combinations of vegetables and meats, seafood, and sometimes beans.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What are some popular street foods in Mexico?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Popular street foods in Mexico include:
+                <ul>
+                    <li>Tacos</li>
+                    <li>Elote (grilled corn on the cob)</li>
+                    <li>Quesadillas</li>
+                    <li>Churros</li>
+                    <li>Tamales</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What is a traditional British breakfast?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">A traditional British breakfast typically includes eggs, bacon, sausages, beans,
+                tomatoes, mushrooms, toast, and sometimes black pudding.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What is kimchi?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">Kimchi is a traditional Korean dish made from fermented vegetables, most commonly napa
+                cabbage and Korean radishes, with a variety of seasonings including chili powder, garlic, ginger, and salted
+                seafood.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question-wrapper">
+                <h3 class="faq-question">What are some common ingredients in Indian curry?</h3>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Common ingredients in Indian curry include:
+                <ul>
+                    <li>Onions</li>
+                    <li>Garlic</li>
+                    <li>Ginger</li>
+                    <li>Tomatoes</li>
+                    <li>Various spices (e.g., turmeric, cumin, coriander, chili powder)</li>
+                    <li>Yogurt or coconut milk (depending on the region)</li>
+                    <li>Fresh herbs like cilantro</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+      
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = event.target.closest('.faq-item').querySelector('.faq-answer');
+                const plusMinus = event.target;
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    plusMinus.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    plusMinus.textContent = 'x';
+                }
+            });
+        });
+</script>
+</body>
+
+</html>
